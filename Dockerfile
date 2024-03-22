@@ -1,7 +1,7 @@
 FROM php:5.6-fpm
 
 RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list \
-  && apt-get update && apt-get install -y curl lp-solve
+  && apt-get update && apt-get install -y curl zip lp-solve
 
 RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
