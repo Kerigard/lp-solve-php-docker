@@ -1,6 +1,6 @@
 FROM php:7.4-fpm
 
-RUN apt-get update && apt-get install -y curl lp-solve
+RUN apt-get update && apt-get install -y curl zip lp-solve
 
 RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
