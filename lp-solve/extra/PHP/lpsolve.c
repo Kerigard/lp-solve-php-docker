@@ -4584,7 +4584,7 @@ static void mainloop(structlpsolve *lpsolve)
         hashelem *hp;
 
         interrupted = FALSE;
-        signal(SIGINT, SIGINT_func);
+        // signal(SIGINT, SIGINT_func);
 
         if (setjmp(lpsolve->lpsolvecaller.exit_mark) == 0) {
                 char buf[bufsz];
