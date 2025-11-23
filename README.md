@@ -1,5 +1,5 @@
-# lp solve php
+# LP Solve PHP
 
-Port [lp solve](https://lpsolve.sourceforge.net) library for php 8 in docker image.
+Port the [lp solve](https://lpsolve.sourceforge.net) extension to PHP 8 in a Docker image.
 
 License [GNU LESSER GENERAL PUBLIC LICENSE](https://lpsolve.sourceforge.net/5.5/LGPL.htm).
