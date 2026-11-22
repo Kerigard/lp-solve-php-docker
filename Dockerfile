@@ -1,6 +1,12 @@
 FROM php:7.4-fpm
 
-RUN apt-get update && apt-get install -y curl zip lp-solve
+RUN sed -i '/debian.org/s/^/#/' /etc/apt/sources.list \
+    && echo "deb http://archive.debian.org/debian bullseye main" >> /etc/apt/sources.list \
+    && echo "deb http://archive.debian.org/debian bullseye-updates main" >> /etc/apt/sources.list \
+    && echo "deb http://archive.debian.org/debian-security bullseye-security main" >> /etc/apt/sources.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends curl zip unzip lp-solve \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
