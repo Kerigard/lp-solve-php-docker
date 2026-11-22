@@ -1,6 +1,9 @@
-FROM php:8.5-fpm
+FROM php:8.6-fpm
 
-RUN apt-get update && apt-get install -y curl zip lp-solve
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends curl zip unzip libonig-dev libzip-dev lp-solve \
+  && docker-php-ext-install mbstring zip \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
